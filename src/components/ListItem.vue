@@ -36,3 +36,44 @@ export default {
   }
 }
 </script>
+
+<style>
+.list-item {
+  position: relative;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+  font-size: 12px;
+}
+
+.list-item:nth-of-type(2n + 1) {
+  background-color: #f6f6f6;
+}
+
+.list-item > div > span:nth-of-type(1) {
+  display: inline-block;
+  min-width: 26px;
+}
+
+.list-item > div span:nth-of-type(2) span {
+  font-size: 10px;
+  background-color: #555;
+  color: #fff;
+  padding: 3px 5px;
+  position: relative;
+  margin-right: 5px;
+}
+
+.list-item > div:nth-of-type(5) button {
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  background-color: tomato;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: none;
+}
+.list-item:hover > div:nth-of-type(5) button {
+  display: block;
+}
+</style>
