@@ -1,34 +1,37 @@
 <template>
   <div id="app">
     <EditorView @add="add" />
-    <ListItem :memo="memo" />
+    <ListView :memos="memos" />
   </div>
 </template>
 
 <script>
-import ListItem from './components/ListItem'
 import EditorView from './components/EditorView'
+import ListView from './components/ListView'
 
 export default {
   name: 'App',
   components: {
-    ListItem,
-    EditorView
+    EditorView,
+    ListView
   },
   data () {
     return {
-      memo: {
-        id: 1,
-        text: '',
-        date: '',
-        tags: ''
-      }
+      memos: []
     }
   },
   methods: {
     add (newMemo) {
-      console.log(newMemo)
-      Object.assign(this.memo, newMemo)
+      newMemo.id = this.nextId
+      this.memos.push(newMemo)
+    }
+  },
+  computed: {
+    nextId () {
+      // this.memos の中で一番大きい id + 1 を返す
+      return this.memos.reduce((id, memo) => {
+        return id < memo.id ? memo.id : id
+      }, 0) + 1
     }
   }
 }
