@@ -47,7 +47,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang=scss>
+
 .editor-view {
   flex-grow: 1;
   border-radius: 2px;
@@ -57,42 +58,46 @@ export default {
   flex-direction: column;
   max-width: 400px;
   padding: 10px;
+
+  & > div {
+    box-shadow: 0 1px 0 rgba(255,255,255, 1);
+    background-color: #fff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  & > div label {
+    color: #555;
+    font-size: 11px;
+    min-width: 35px;
+    text-align: right;
+  }
+
+  & > div input {
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    outline-offset: -4px;
+    outline-width: 1px;
+    border: 1px solid #b3b3b3;
+  }
+
+  & > div:last-of-type {
+    justify-content: flex-end;
+    padding: 5px 0 0;
+  }
+
+  & button {
+    margin-left: 10px;
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    width: 100px;
+    line-height: 30px;
+  }
 }
 
-.editor-view > div {
-  box-shadow: 0 1px 0 rgba(255,255,255, 1);
-  background-color: #fff;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-.editor-view > div label {
-  color: #555;
-  font-size: 11px;
-  min-width: 35px;
-  text-align: right;
-}
-.editor-view > div input {
-  flex-grow: 1;
-  box-sizing: border-box;
-  padding: 10px 5px;
-  outline-offset: -4px;
-  outline-width: 1px;
-  border: 1px solid #b3b3b3;
-}
-.editor-view > div:last-of-type {
-  justify-content: flex-end;
-  padding: 5px 0 0;
-}
-.editor-view button {
-  margin-left: 10px;
-  background-color: #555;
-  color: #fff;
-  cursor: pointer;
-  border: none;
-  width: 100px;
-  line-height: 30px;
-}
 </style>
