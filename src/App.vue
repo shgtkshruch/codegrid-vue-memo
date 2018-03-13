@@ -1,8 +1,7 @@
-<template>
-  <div id="app">
-    <EditorView @add="add" />
-    <ListView :memos="memos" @remove="remove" />
-  </div>
+<template lang=pug>
+  #app
+    EditorView(@add="add")
+    ListView(:memos="memos" @remove="remove")
 </template>
 
 <script>

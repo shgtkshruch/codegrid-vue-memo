@@ -1,16 +1,12 @@
-<template>
-  <div class="list-view">
-    <div v-if="memos && memos.length !== 0">
-      <list-item
+<template lang=pug>
+  .list-view
+    div(v-if="memos && memos.length !== 0")
+      list-item(
         v-for="memo in memos"
         :key="memo.id"
-        :memo="memo">
-      </list-item>
-    </div>
-    <div v-else>
-      表示できるメモがありません。
-    </div>
-  </div>
+        :memo="memo"
+      )
+    div(v-else) 表示できるメモがありません。
 </template>
 
 <script>
