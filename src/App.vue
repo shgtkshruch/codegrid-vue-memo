@@ -1,13 +1,18 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
+    <ListItem />
   </div>
 </template>
 
 <script>
+import ListItem from './components/ListItem'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    ListItem
+  }
 }
 </script>
 
@@ -19,5 +24,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+body {
+  padding: 0;  margin: 0;
 }
 </style>
